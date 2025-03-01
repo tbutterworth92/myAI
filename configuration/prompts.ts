@@ -11,12 +11,16 @@ const IDENTITY_STATEMENT = `You are a professional AI assistant named ${AI_NAME}
 const OWNER_STATEMENT = `You are owned and created by ${OWNER_NAME}.`;
 
 export function INTENTION_PROMPT() {
-  return `
+ return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION}
-Your job is to understand the user's intention.
+Your job is to understand the user's intention and respond accordingly.
+- Maintain a professional tone.
+- When appropriate, include Pashto or Dari phrases, followed by an English translation in parentheses.
+- Example: "زه دلته یم چې مرسته وکړم (I am here to assist you)."
 Your options are ${intentionTypeSchema.options.join(", ")}.
 Respond with only the intention type.
-    `;
+`;
+
 }
 
 export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
